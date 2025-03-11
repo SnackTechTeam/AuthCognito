@@ -1,19 +1,18 @@
-# CognitoAuth
+# AuthCognito
 
 Este projeto implementa uma API protegida usando AWS Cognito e um Lambda Authorizer.
 
 ## Estrutura do Projeto
 lambda/
     ├── lambda_authorizer.py
-    └──requirements.txt
+    └── requirements.txt
 terraform/
-  ├── api_gateway.tf
-  ├── cognito.tf
-  ├── lambda.tf
-  ├── main.tf
-  ├── permissions.tf
-  └── provider.tf
-
+    ├── api_gateway.tf
+    ├── cognito.tf
+    ├── lambda.tf
+    ├── main.tf
+    ├── permissions.tf
+    └── provider.tf
 
 
 ## Pré-requisitos
