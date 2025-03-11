@@ -3,10 +3,10 @@
 Este projeto implementa uma API protegida usando AWS Cognito e um Lambda Authorizer.
 
 ## Estrutura do Projeto
-lambda/
+lambda
     ├── lambda_authorizer.py
     └── requirements.txt
-terraform/
+terraform
     ├── api_gateway.tf
     ├── cognito.tf
     ├── lambda.tf
