@@ -2,7 +2,7 @@ resource "aws_lambda_function" "auth_lambda" {
   source_code_hash = filebase64sha256("../lambda/lambda_package.zip")
   filename         = "../lambda/lambda_package.zip"
   function_name = "lambda_authorizer"
-  role          = data.aws_iam_role.labrole.arn
+  role          = data.aws_iam_role.voclabs.arn
   handler       = "lambda_authorizer.lambda_handler"
   runtime       = "python3.8"
 

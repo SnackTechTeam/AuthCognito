@@ -11,7 +11,7 @@ resource "aws_api_gateway_authorizer" "lambda_auth" {
   name                   = "LambdaAuth"
   rest_api_id            = aws_api_gateway_rest_api.api.id
   authorizer_uri         = aws_lambda_function.auth_lambda.invoke_arn
-  authorizer_credentials = data.aws_iam_role.labrole.arn
+  authorizer_credentials = data.aws_iam_role.voclabs.arn
   type                   = "TOKEN"
   identity_source        = "method.request.header.Authorization"
 }
