@@ -17,8 +17,3 @@ resource "aws_iam_policy" "lambda_policy" {
     ]
   })
 }
-
-resource "aws_iam_role_policy_attachment" "lambda_policy_attach" {
-  role       = "voclabs"#aws_iam_role.lambda_exec.name
-  policy_arn = aws_iam_policy.lambda_policy.arn
-}
