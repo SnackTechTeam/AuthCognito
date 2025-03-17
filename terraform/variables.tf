@@ -5,7 +5,7 @@ variable "region" {
 
 variable "callback_url" {
   description = "Callback URL for Cognito"
-  default     = "https://auth-cognito-videoup.com/callback"
+  default     = "https://auth-vidsnap-domain-example.com/callback"
 }
 
 variable "policyArn" {
