@@ -19,3 +19,9 @@ variable "projectInfos" {
   }
   description = "Informações sobre o projeto"
 }
+
+variable "cognito_domain_name" {
+  description = "Custom domain name for the Cognito User Pool"
+  type        = string
+  default     = "auth-vidsnap-domain-example"  # Substitua pelo nome do domínio desejado
+}

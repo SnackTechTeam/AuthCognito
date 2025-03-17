@@ -20,4 +20,10 @@ resource "aws_cognito_user_pool_client" "app_client" {
   allowed_oauth_scopes = ["openid", "email", "profile"]
   allowed_oauth_flows_user_pool_client = true
   callback_urls = [var.callback_url]  # Ajuste conforme necessário
+  supported_identity_providers = ["COGNITO"]
+}
+
+resource "aws_cognito_user_pool_domain" "custom_domain" {
+  domain         = var.cognito_domain_name
+  user_pool_id   = aws_cognito_user_pool.main.id
 }
