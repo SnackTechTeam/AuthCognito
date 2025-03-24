@@ -1,10 +1,10 @@
 resource "aws_lambda_function" "auth_lambda" {
-  source_code_hash = filebase64sha256("../lambda/lambda_package.zip")
-  filename         = "../lambda/lambda_package.zip"
-  function_name = "lambda_authorizer"
-  role          = data.aws_iam_role.LabRole.arn
-  handler       = "lambda_authorizer.lambda_handler"
-  runtime       = "python3.8"
+  filename         = "../lambda/lambda_authorizer.js.zip"  # Arquivo ZIP contendo apenas o JS
+  source_code_hash = filebase64sha256("../lambda/lambda_authorizer.js.zip")
+  function_name    = "lambda_authorizer"
+  role             = data.aws_iam_role.LabRole.arn
+  handler          = "lambda_authorizer.handler"  # Mudou para o export do JS
+  runtime          = "nodejs18.x"  # Ou a versão mais recente disponível
 
   environment {
     variables = {

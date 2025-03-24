@@ -61,9 +61,8 @@ O arquivo [`lambda_authorizer.py`](lambda/lambda_authorizer.py) contém o códig
 Após a configuração, você pode fazer chamadas para a API.
 
 1. Acesse o Postman e crie uma requisição GET com a URL da API Gateway. Para pegar a URL desse endpoint, acesse a AWS e siga:
-    1.1. Lambda > Funções > `lambda_authorizer`.
-    1.2. Dentro do `lambda_authorizer`, clique em API Gateway. Em gatilhos, estará apresentado o "Endpoint de API". Copie e cole esse endpoint na URL do Postman.
-    ![Endpoint API Gateway](docs/img/EndpointApiGateway.png)
+    1.1. API Gateway > APIs > `auth-api`.
+    1.2. Dentro do `auth-api`, clique em Estágios. Copie o "Invocar URL"
 2. Em Authorization, selecione OAuth 2.0.
 3. Preencha os campos (conforme o `variables.tf`):
     - **CallBack URL**: `https://auth-vidsnap-domain-example.com/callback`
