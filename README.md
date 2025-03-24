@@ -70,7 +70,9 @@ Após a configuração, você pode fazer chamadas para a API.
     - **Auth URL**: `https://auth-vidsnap-domain-example.auth.us-east-1.amazoncognito.com/oauth2/authorize`
     - **Access Token URL**: `https://auth-vidsnap-domain-example.auth.us-east-1.amazoncognito.com/oauth2/token`
     - **Client ID**: Dentro do Cognito, acesse "auth-user-pool" > lado esquerdo da tela em "Clientes da aplicação" e clique no auth-client. Nessa tela, copie o ID do cliente.
+    - **Client Secret**: Na mesma tela anterior do Cognito, copie o segredo do cliente.
     ![ID do Cliente](docs/img/ClientId.png)
+
 4. Clique em "Get New Access Token".
 5. Se tudo foi configurado corretamente, será aberta uma página onde deve ser preenchido o e-mail e senha configurados no passo 2 da configuração AWS.
     ![Usuário Cognito](docs/img/UsuarioCognito.png)
