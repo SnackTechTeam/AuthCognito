@@ -9,6 +9,12 @@ resource "aws_cognito_user_pool" "main" {
     name               = "email"
     required           = true
   }
+
+    schema {
+    name                     = "sub"
+    attribute_data_type      = "String"
+    required                 = true
+  }
 }
 
 resource "aws_cognito_user_pool_client" "app_client" {
@@ -16,11 +22,14 @@ resource "aws_cognito_user_pool_client" "app_client" {
   user_pool_id = aws_cognito_user_pool.main.id
   generate_secret = true
 
-  allowed_oauth_flows = ["code"]
-  allowed_oauth_scopes = ["openid", "email", "profile"]
+  # allowed_oauth_flows = ["code"]
+  allowed_oauth_flows = ["code", "implicit"]
+  # allowed_oauth_scopes = ["openid", "email", "profile"]
+  allowed_oauth_scopes = ["openid", "email", "profile", "aws.cognito.signin.user.admin"]
   allowed_oauth_flows_user_pool_client = true
   callback_urls = [var.callback_url]  # Ajuste conforme necessário
   supported_identity_providers = ["COGNITO"]
+  explicit_auth_flows = ["ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
 }
 
 resource "aws_cognito_user_pool_domain" "custom_domain" {
